@@ -91,19 +91,34 @@ snippet :potion "A new potion for alchemy.js"
     /**
      * ${3:Description}
      *
-     * @class ${1:Potion}
-     * @extends ${2:core.MateriaPrima}
+     * @class
+     * @name ${1:Potion}
+     * @extends ${2:core.alchemy.MateriaPrima}
      */
     alchemy.addFormula({
         name: '$1',
         extend: '$2',
         overrides: {
-            init: function () {
-                ${4:// init code here}
-            }
+            /** @lends $1 */
+
+            ${4}
         }
     });
 }());
+endsnippet
+
+snippet :hocus "Add a new magic method which has a reference to its superclass"
+/**
+ * ${4:Description}
+ *
+ * @name $1
+ * @methodOf ${3}
+ */
+${1:fn}: function hocuspocus(_super) {
+    return function () {
+        _super.call(this);
+    };
+}
 endsnippet
 
 snippet :ingr "An Ingredient for a potion {key: ..., ptype: ...}"
