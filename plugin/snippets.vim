@@ -1,1 +1,1 @@
-let g:UltiSnipsSnippetDirectories=[expand("$HOME/.vim/bundles/vim-snippets/snippets")]
+let g:UltiSnipsSnippetDirectories=[expand("$HOME/.vim/bundle/vim-snippets/snippets")]
