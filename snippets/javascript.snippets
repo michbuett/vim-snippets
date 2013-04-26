@@ -95,11 +95,11 @@ snippet :potion "A new potion for alchemy.js"
      * @name ${1:Potion}
      * @extends ${2:core.alchemy.MateriaPrima}
      */
-    alchemy.addFormula({
+    alchemy.formula.add({
         name: '$1',
         extend: '$2',
         overrides: {
-            /** @lends $1 */
+            /** @lends $1.prototype */
 
             ${4}
         }
