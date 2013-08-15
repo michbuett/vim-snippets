@@ -32,8 +32,7 @@ snippet :code "code block: <code>...</code>"
 endsnippet
 
 snippet :param "jsDoc parameter description"
-@param {${1:type}} ${2:name}
-*      ${3:description}
+@param {${1:type}} ${2:name} ${3:description}
 endsnippet
 
 
@@ -93,7 +92,7 @@ snippet :potion "A new potion for alchemy.js"
      *
      * @class
      * @name ${1:Potion}
-     * @extends ${2:core.alchemy.MateriaPrima}
+     * @extends ${2:alchemy.core.MateriaPrima}
      */
     alchemy.formula.add({
         name: '$1',
@@ -107,25 +106,16 @@ snippet :potion "A new potion for alchemy.js"
 }());
 endsnippet
 
-snippet :hocus "Add a new magic method which has a reference to its superclass"
+snippet :or "Add a new magic method which has a reference to its superclass"
 /**
  * ${4:Description}
- *
- * @name $1
- * @methodOf ${3}
+ * @function
  */
-${1:fn}: function hocuspocus(_super) {
+${1:fn}: alchemy.override(function (_super) {
     return function () {
         _super.call(this);
     };
-}
-endsnippet
-
-snippet :ingr "An Ingredient for a potion {key: ..., ptype: ...}"
-{
-    key: '${1:key}',
-    ptype: '${2:Ingredient}'
-}
+}),
 endsnippet
 
 # vim:ft=snippets:
